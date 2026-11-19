@@ -7,21 +7,23 @@
   <style>
     :root {
       color-scheme: dark light;
-      --bg: #0b0b0d;
-      --card: #151519;
-      --border: #27272f;
-      --text: #f4f4f6;
-      --muted: #a1a1aa;
-      --accent: #bc8f8f;
+      --bg: #18181b;
+      --card: #27272a;
+      --surface2: #323236;
+      --border: #3f3f46;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #d4d4d8;
     }
     @media (prefers-color-scheme: light) {
       :root {
-        --bg: #f6f6f8;
-        --card: #ffffff;
-        --border: #e4e4e7;
-        --text: #18181b;
-        --muted: #52525b;
-        --accent: #8c5a5a;
+        --bg: #f7f5ee;
+        --card: #fcfaf5;
+        --surface2: #efece2;
+        --border: #ddd7c8;
+        --text: #1c1917;
+        --muted: #57534e;
+        --accent: #3f3f46;
       }
     }
     * { box-sizing: border-box; }
@@ -69,6 +71,7 @@
     }
     .lang-btn.active {
       border-color: var(--accent);
+      background: var(--surface2);
       color: var(--accent);
     }
     .card {
@@ -93,6 +96,14 @@
     }
     li { margin-bottom: 6px; }
     a { color: var(--accent); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.88em;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      padding: 1px 5px;
+    }
     .hidden { display: none; }
     footer {
       margin-top: 28px;
@@ -106,7 +117,7 @@
   <div class="container">
     <header>
       <h1>Reppy — Privacy Policy</h1>
-      <p class="subtitle">Offline Studio • Last updated: 2026-11-18</p>
+      <p class="subtitle">Offline Studio • Last updated: 2026-11-19</p>
       <div class="lang-nav">
         <button id="btn-en" class="lang-btn active" onclick="setLang('en')">English</button>
         <button id="btn-it" class="lang-btn" onclick="setLang('it')">Italiano</button>
@@ -115,11 +126,11 @@
 
     <main id="content-en">
       <div class="card">
-        <h2>1. Summary (Offline-First, Zero Tracking)</h2>
-        <p><strong>Reppy</strong> is a local-first workout tracking app developed by Offline Studio. We do not operate user accounts, proprietary servers, cloud databases, advertising SDKs, or behavioral analytics.</p>
+        <h2>1. Summary (100% Offline-First, Zero Tracking)</h2>
+        <p><strong>Reppy</strong> is a strictly offline, local-first workout tracking app developed by Offline Studio. The app does not request the Android <code>INTERNET</code> permission and does not operate user accounts, proprietary servers, cloud databases, advertising SDKs, or behavioral analytics.</p>
         <ul>
           <li>No account or registration is required.</li>
-          <li>No personal data is collected, sold, or shared with third parties by the developer.</li>
+          <li>No personal data is collected, transmitted, sold, or shared with third parties by the developer.</li>
           <li>All workout routines, exercise history, notes, settings, and form-check videos remain stored locally on your device.</li>
         </ul>
       </div>
@@ -127,26 +138,25 @@
       <div class="card">
         <h2>2. Data Stored Locally on Your Device</h2>
         <ul>
-          <li><strong>Workout & Exercise Data:</strong> stored in a local SQLite (Room) database and DataStore preferences on your device.</li>
+          <li><strong>Workout &amp; Exercise Data:</strong> stored in a local SQLite (Room) database and DataStore preferences on your device.</li>
           <li><strong>Form-Check Videos:</strong> optional execution clips you record or import are compressed and stored exclusively in the app's private internal storage directory.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>3. Permissions & Optional External Actions</h2>
-        <p>Reppy only accesses device features or external services when explicitly triggered by you:</p>
+        <h2>3. Permissions &amp; Optional User-Initiated Actions</h2>
+        <p>Reppy only accesses device features or hands off to external apps on your device when explicitly triggered by you:</p>
         <ul>
-          <li><strong>Android Photo Picker / Media Selection:</strong> used only when you choose to import a form-check video or attach screenshots/videos to a feedback email. Reppy does not scan or read your photo library in the background.</li>
-          <li><strong>Motion Sensor (Accelerometer):</strong> used strictly locally and in real time to wake the screen from the OLED rest dimmer during a workout. Sensor data is never stored or transmitted.</li>
-          <li><strong>Notifications & Foreground Service:</strong> used locally to display your active workout rest countdown timer and play your chosen audio/vibration alert.</li>
-          <li><strong>Google Drive / Local Backups:</strong> initiated only when you select a destination folder via Android's Storage Access Framework (SAF) to export or restore your backup files (`.json` / `.zip`).</li>
-          <li><strong>Google Sheets Webhook (Optional):</strong> network requests are sent only if you manually enter your own webhook URL in Settings and export workout logs.</li>
-          <li><strong>Feedback & Ideas Email:</strong> choosing "Send Email" opens your device's email client with a draft addressed to <a href="mailto:offline.studio.eu@gmail.com">offline.studio.eu@gmail.com</a>. Optional app version and device model details are included only if you keep the corresponding checkbox enabled.</li>
+          <li><strong>Android Photo Picker / Camera Capture:</strong> used only when you choose to record or import a form-check video, or attach screenshots/videos to a feedback email. Reppy never scans or reads your photo library in the background.</li>
+          <li><strong>Motion Sensor (Accelerometer):</strong> used strictly locally and in real time to wake the screen from the OLED rest dimmer during an active workout. Sensor data is never stored or transmitted.</li>
+          <li><strong>Notifications &amp; Foreground Service:</strong> used locally to display your active workout rest countdown timer and play your chosen audio/vibration alert.</li>
+          <li><strong>Google Drive / Local Folder Backups:</strong> initiated only when you select a destination folder via Android's Storage Access Framework (SAF) to export or restore your backup files (<code>.json</code> / <code>.zip</code>).</li>
+          <li><strong>Feedback &amp; Ideas Email:</strong> choosing "Send Email" opens your device's email client with a draft addressed to <a href="mailto:offline.studio.eu@gmail.com">offline.studio.eu@gmail.com</a>. Optional app version and device model details are included only if you keep the corresponding checkbox enabled.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>4. Data Retention & Deletion</h2>
+        <h2>4. Data Retention &amp; Deletion</h2>
         <p>You have full control over your data at all times. You can delete individual sessions, routines, or videos inside the app, or clear all app data / uninstall Reppy to permanently remove all local data from your device.</p>
       </div>
 
@@ -158,11 +168,11 @@
 
     <main id="content-it" class="hidden">
       <div class="card">
-        <h2>1. Riepilogo (Offline-First, Zero Tracciamento)</h2>
-        <p><strong>Reppy</strong> è un'app di tracciamento allenamenti local-first sviluppata da Offline Studio. Non gestiamo account utente, server proprietari, database cloud, SDK pubblicitari o sistemi di tracciamento/analytics.</p>
+        <h2>1. Riepilogo (100% Offline-First, Zero Tracciamento)</h2>
+        <p><strong>Reppy</strong> è un'app di tracciamento allenamenti interamente offline e local-first sviluppata da Offline Studio. L'app non richiede il permesso Android <code>INTERNET</code> e non gestisce account utente, server proprietari, database cloud, SDK pubblicitari o sistemi di tracciamento/analytics.</p>
         <ul>
           <li>Non è richiesta alcuna registrazione o creazione account.</li>
-          <li>Nessun dato personale viene raccolto, venduto o condiviso con terze parti dallo sviluppatore.</li>
+          <li>Nessun dato personale viene raccolto, trasmesso, venduto o condiviso con terze parti dallo sviluppatore.</li>
           <li>Tutte le schede, lo storico allenamenti, le note, le preferenze e i video Form Check restano salvati localmente sul tuo dispositivo.</li>
         </ul>
       </div>
@@ -176,15 +186,14 @@
       </div>
 
       <div class="card">
-        <h2>3. Permessi e azioni esterne opzionali</h2>
-        <p>Reppy utilizza funzioni di sistema o comunicazioni esterne esclusivamente su azione diretta dell'utente:</p>
+        <h2>3. Permessi e azioni esterne avviate dall'utente</h2>
+        <p>Reppy utilizza funzioni di sistema o apre app esterne sul dispositivo esclusivamente su azione diretta dell'utente:</p>
         <ul>
-          <li><strong>Photo Picker Android / Selezione Media:</strong> usato solo quando scegli di importare un video Form Check o allegare screenshot/video a un'email di feedback. Reppy non legge né scansiona la tua galleria in background.</li>
+          <li><strong>Photo Picker Android / Fotocamera:</strong> usati solo quando scegli di registrare o importare un video Form Check o allegare screenshot/video a un'email di feedback. Reppy non legge né scansiona la tua galleria in background.</li>
           <li><strong>Sensore di movimento (Accelerometro):</strong> utilizzato solo localmente e in tempo reale per risvegliare lo schermo dal salvaschermo OLED durante il recupero. I dati del sensore non vengono mai salvati né trasmessi.</li>
-          <li><strong>Notifiche & Foreground Service:</strong> usati localmente per mostrare il countdown del timer di recupero attivo e riprodurre l'avviso sonoro/vibrazione scelto.</li>
-          <li><strong>Backup Google Drive / Locali:</strong> avviati solo quando selezioni una cartella tramite Storage Access Framework (SAF) di Android per esportare o ripristinare i tuoi backup (`.json` / `.zip`).</li>
-          <li><strong>Webhook Google Sheets (Opzionale):</strong> l'app effettua invii di rete solo se inserisci manualmente un tuo URL webhook nelle Impostazioni ed esporti le sessioni.</li>
-          <li><strong>Email Feedback & Idee:</strong> premendo "Invia Email" si apre il tuo client di posta precompilato verso <a href="mailto:offline.studio.eu@gmail.com">offline.studio.eu@gmail.com</a>. I dettagli su versione app e modello dispositivo vengono inclusi solo se lasci attiva l'apposita spunta.</li>
+          <li><strong>Notifiche &amp; Foreground Service:</strong> usati localmente per mostrare il countdown del timer di recupero attivo e riprodurre l'avviso sonoro/vibrazione scelto.</li>
+          <li><strong>Backup Google Drive / Cartella Locale:</strong> avviati solo quando selezioni una cartella tramite Storage Access Framework (SAF) di Android per esportare o ripristinare i tuoi backup (<code>.json</code> / <code>.zip</code>).</li>
+          <li><strong>Email Feedback &amp; Idee:</strong> premendo "Invia Email" si apre il tuo client di posta precompilato verso <a href="mailto:offline.studio.eu@gmail.com">offline.studio.eu@gmail.com</a>. I dettagli su versione app e modello dispositivo vengono inclusi solo se lasci attiva l'apposita spunta.</li>
         </ul>
       </div>
 
