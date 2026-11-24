@@ -117,7 +117,7 @@
   <div class="container">
     <header>
       <h1>Reppy — Privacy Policy</h1>
-      <p class="subtitle">Offline Studio • Last updated: 2026-11-19</p>
+      <p class="subtitle">Offline Studio • Last updated: 2026-11-24</p>
       <div class="lang-nav">
         <button id="btn-en" class="lang-btn active" onclick="setLang('en')">English</button>
         <button id="btn-it" class="lang-btn" onclick="setLang('it')">Italiano</button>
@@ -126,12 +126,13 @@
 
     <main id="content-en">
       <div class="card">
-        <h2>1. Summary (100% Offline-First, Zero Tracking)</h2>
-        <p><strong>Reppy</strong> is a strictly offline, local-first workout tracking app developed by Offline Studio. The app does not request the Android <code>INTERNET</code> permission and does not operate user accounts, proprietary servers, cloud databases, advertising SDKs, or behavioral analytics.</p>
+        <h2>1. Summary (Local-First, Zero Tracking, Zero Proprietary Servers)</h2>
+        <p><strong>Reppy</strong> is a local-first workout tracking app developed by Offline Studio. The app works fully offline without an account and does not operate proprietary servers, developer cloud databases, advertising SDKs, or behavioral analytics.</p>
         <ul>
-          <li>No account or registration is required.</li>
-          <li>No personal data is collected, transmitted, sold, or shared with third parties by the developer.</li>
+          <li>No mandatory account or registration is required.</li>
+          <li>No personal data is collected, transmitted to the developer, sold, or shared with third parties.</li>
           <li>All workout routines, exercise history, notes, settings, and form-check videos remain stored locally on your device.</li>
+          <li>If you optionally sign in with Google, your workout data (excluding videos) is backed up directly to your own private Google Drive app folder.</li>
         </ul>
       </div>
 
@@ -139,25 +140,26 @@
         <h2>2. Data Stored Locally on Your Device</h2>
         <ul>
           <li><strong>Workout &amp; Exercise Data:</strong> stored in a local SQLite (Room) database and DataStore preferences on your device.</li>
-          <li><strong>Form-Check Videos:</strong> optional execution clips you record or import are compressed and stored exclusively in the app's private internal storage directory.</li>
+          <li><strong>Form-Check Videos:</strong> optional execution clips you record or import are compressed and stored exclusively in the app's private internal storage directory. Videos are never uploaded to Google Drive by automatic cloud backup.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>3. Permissions &amp; Optional User-Initiated Actions</h2>
-        <p>Reppy only accesses device features or hands off to external apps on your device when explicitly triggered by you:</p>
+        <h2>3. Permissions, Optional Google Drive Backup &amp; User Actions</h2>
+        <p>Reppy only accesses device features, network services, or external apps when explicitly enabled or triggered by you:</p>
         <ul>
+          <li><strong>Optional Google Sign-In &amp; Automatic Google Drive Backup (<code>INTERNET</code>):</strong> if you choose to connect your Google account, Reppy requests your basic Google email/name (displayed in Settings) and the restricted <code>drive.appdata</code> scope to automatically back up and restore your workout data (routines, exercises, history, and settings — <strong>no videos</strong>) inside the hidden, app-private <code>appDataFolder</code> on <strong>your own Google Drive</strong>. Reppy cannot access, read, or modify any other files in your Google Drive, and no data passes through Offline Studio servers. Reppy's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+          <li><strong>Local File Backups (Offline):</strong> you can manually export or restore data-only (<code>.json</code>) or full backups including videos (<code>.zip</code>) to/from your device storage.</li>
           <li><strong>Android Photo Picker / Camera Capture:</strong> used only when you choose to record or import a form-check video, or attach screenshots/videos to a feedback email. Reppy never scans or reads your photo library in the background.</li>
           <li><strong>Motion Sensor (Accelerometer):</strong> used strictly locally and in real time to wake the screen from the OLED rest dimmer during an active workout. Sensor data is never stored or transmitted.</li>
           <li><strong>Notifications &amp; Foreground Service:</strong> used locally to display your active workout rest countdown timer and play your chosen audio/vibration alert.</li>
-          <li><strong>Google Drive / Local Folder Backups:</strong> initiated only when you select a destination folder via Android's Storage Access Framework (SAF) to export or restore your backup files (<code>.json</code> / <code>.zip</code>).</li>
           <li><strong>Feedback &amp; Ideas Email:</strong> choosing "Send Email" opens your device's email client with a draft addressed to <a href="mailto:offline.studio.eu@gmail.com">offline.studio.eu@gmail.com</a>. Optional app version and device model details are included only if you keep the corresponding checkbox enabled.</li>
         </ul>
       </div>
 
       <div class="card">
         <h2>4. Data Retention &amp; Deletion</h2>
-        <p>You have full control over your data at all times. You can delete individual sessions, routines, or videos inside the app, or clear all app data / uninstall Reppy to permanently remove all local data from your device.</p>
+        <p>You have full control over your data at all times. You can delete individual sessions, routines, or videos inside the app, or clear all app data / uninstall Reppy to permanently remove all local data from your device. If you enabled optional Google Drive backup, you can disconnect your Google account and delete the cloud backup directly from <strong>Settings → Data, Backup &amp; Storage</strong>, or revoke access at any time from your Google Account security settings.</p>
       </div>
 
       <div class="card">
@@ -168,12 +170,13 @@
 
     <main id="content-it" class="hidden">
       <div class="card">
-        <h2>1. Riepilogo (100% Offline-First, Zero Tracciamento)</h2>
-        <p><strong>Reppy</strong> è un'app di tracciamento allenamenti interamente offline e local-first sviluppata da Offline Studio. L'app non richiede il permesso Android <code>INTERNET</code> e non gestisce account utente, server proprietari, database cloud, SDK pubblicitari o sistemi di tracciamento/analytics.</p>
+        <h2>1. Riepilogo (Local-First, Zero Tracciamento, Zero Server Proprietari)</h2>
+        <p><strong>Reppy</strong> è un'app di tracciamento allenamenti local-first sviluppata da Offline Studio. L'app funziona completamente offline senza account e non utilizza server proprietari, database cloud dello sviluppatore, SDK pubblicitari o sistemi di tracciamento/analytics.</p>
         <ul>
-          <li>Non è richiesta alcuna registrazione o creazione account.</li>
-          <li>Nessun dato personale viene raccolto, trasmesso, venduto o condiviso con terze parti dallo sviluppatore.</li>
+          <li>Non è richiesta alcuna registrazione o creazione account obbligatoria.</li>
+          <li>Nessun dato personale viene raccolto, trasmesso allo sviluppatore, venduto o condiviso con terze parti.</li>
           <li>Tutte le schede, lo storico allenamenti, le note, le preferenze e i video Form Check restano salvati localmente sul tuo dispositivo.</li>
+          <li>Se scegli facoltativamente di accedere con Google, i tuoi soli dati di allenamento (video esclusi) vengono salvati nella cartella privata dell'app sul tuo Google Drive personale.</li>
         </ul>
       </div>
 
@@ -181,25 +184,26 @@
         <h2>2. Dati salvati localmente sul dispositivo</h2>
         <ul>
           <li><strong>Dati Allenamento ed Esercizi:</strong> salvati in un database SQLite locale (Room) e nelle preferenze DataStore sul dispositivo.</li>
-          <li><strong>Video Form Check:</strong> eventuali clip di esecuzione registrate o importate vengono compresse e salvate esclusivamente nella cartella privata dell'app sul dispositivo.</li>
+          <li><strong>Video Form Check:</strong> eventuali clip di esecuzione registrate o importate vengono compresse e salvate esclusivamente nella cartella privata dell'app sul dispositivo. I video non vengono mai caricati su Google Drive dal backup automatico.</li>
         </ul>
       </div>
 
       <div class="card">
-        <h2>3. Permessi e azioni esterne avviate dall'utente</h2>
-        <p>Reppy utilizza funzioni di sistema o apre app esterne sul dispositivo esclusivamente su azione diretta dell'utente:</p>
+        <h2>3. Permessi, Backup Opzionale su Google Drive e Azioni Utente</h2>
+        <p>Reppy utilizza funzioni di sistema, rete o app esterne esclusivamente quando abilitate o avviate direttamente dall'utente:</p>
         <ul>
+          <li><strong>Accesso Google Opzionale e Backup Automatico su Google Drive (<code>INTERNET</code>):</strong> se scegli di collegare il tuo account Google, Reppy richiede il tuo indirizzo email/nome Google (mostrato nelle Impostazioni) e l'ambito limitato <code>drive.appdata</code> per salvare e ripristinare automaticamente i <strong>soli dati</strong> (schede, esercizi, storico e preferenze — <strong>nessun video</strong>) nella cartella privata <code>appDataFolder</code> del <strong>tuo Google Drive personale</strong>. Reppy non può leggere, elencare né modificare alcun altro file del tuo Google Drive e nessun dato transita su server di Offline Studio. L'utilizzo delle informazioni ricevute dalle API di Google è conforme alla <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, inclusi i requisiti di utilizzo limitato (Limited Use).</li>
+          <li><strong>Backup su File (Offline):</strong> puoi esportare o ripristinare manualmente backup solo dati (<code>.json</code>) o completi con video (<code>.zip</code>) dalla memoria del tuo dispositivo.</li>
           <li><strong>Photo Picker Android / Fotocamera:</strong> usati solo quando scegli di registrare o importare un video Form Check o allegare screenshot/video a un'email di feedback. Reppy non legge né scansiona la tua galleria in background.</li>
           <li><strong>Sensore di movimento (Accelerometro):</strong> utilizzato solo localmente e in tempo reale per risvegliare lo schermo dal salvaschermo OLED durante il recupero. I dati del sensore non vengono mai salvati né trasmessi.</li>
           <li><strong>Notifiche &amp; Foreground Service:</strong> usati localmente per mostrare il countdown del timer di recupero attivo e riprodurre l'avviso sonoro/vibrazione scelto.</li>
-          <li><strong>Backup Google Drive / Cartella Locale:</strong> avviati solo quando selezioni una cartella tramite Storage Access Framework (SAF) di Android per esportare o ripristinare i tuoi backup (<code>.json</code> / <code>.zip</code>).</li>
           <li><strong>Email Feedback &amp; Idee:</strong> premendo "Invia Email" si apre il tuo client di posta precompilato verso <a href="mailto:offline.studio.eu@gmail.com">offline.studio.eu@gmail.com</a>. I dettagli su versione app e modello dispositivo vengono inclusi solo se lasci attiva l'apposita spunta.</li>
         </ul>
       </div>
 
       <div class="card">
         <h2>4. Conservazione e cancellazione dei dati</h2>
-        <p>Hai il controllo completo sui tuoi dati in ogni momento: puoi eliminare singole sessioni, schede o video direttamente dall'app, oppure svuotare i dati o disinstallare Reppy per rimuovere definitivamente tutto dal dispositivo.</p>
+        <p>Hai il controllo completo sui tuoi dati in ogni momento: puoi eliminare singole sessioni, schede o video direttamente dall'app, oppure svuotare i dati o disinstallare Reppy per rimuovere definitivamente tutto dal dispositivo. Se hai attivato il backup opzionale su Google Drive, puoi scollegare l'account ed eliminare il backup cloud direttamente da <strong>Impostazioni → Dati, Backup &amp; Memoria</strong>, oppure revocare l'accesso in qualsiasi momento dalle impostazioni del tuo Account Google.</p>
       </div>
 
       <div class="card">
